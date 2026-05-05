@@ -1,5 +1,5 @@
 import { Facebook, Linkedin, Instagram, Twitter, Phone, Mail, MapPin } from "lucide-react";
-import { ScalesIcon } from "../ScalesIcon";
+import { ScalesIcon } from "@/components/ScalesIcon";
 
 const cols = [
   { title: "Quick Links", items: ["Home", "About Us", "Practice Areas", "Our Team", "Cases", "Contact"] },

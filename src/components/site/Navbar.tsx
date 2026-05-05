@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { ScalesIcon } from "./ScalesIcon";
+import { ScalesIcon } from "@/components/ScalesIcon";
 
 const links = [
   { id: "home", label: "Home" },
