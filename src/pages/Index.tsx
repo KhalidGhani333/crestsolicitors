@@ -12,7 +12,6 @@ import { Blog } from "@/components/site/Blog";
 import { CTA } from "@/components/site/CTA";
 import { Footer } from "@/components/site/Footer";
 import { ConsultationModal } from "@/components/site/ConsultationModal";
-import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { GoldCursor } from "@/components/GoldCursor";
 import { useReveal } from "@/hooks/use-reveal";
 
@@ -43,7 +42,6 @@ const Index = () => {
         <CTA onBook={() => setOpen(true)} />
       </main>
       <Footer />
-      <WhatsAppFab />
       <ConsultationModal open={open} onClose={() => setOpen(false)} />
     </div>
   );

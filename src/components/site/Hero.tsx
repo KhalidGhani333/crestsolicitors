@@ -21,13 +21,13 @@ export const Hero = ({ onBook }: { onBook: () => void }) => {
         style={{ transform: `translateY(${y * 0.15}px)` }}
         aria-hidden
       />
-      <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-gold/10 blur-3xl" aria-hidden />
+      <div className="absolute -top-32 -left-32 w-72 h-72 md:w-[500px] md:h-[500px] rounded-full bg-gold/10 blur-3xl" aria-hidden />
 
       <div className="container-x relative grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <div className="gold-pill mb-7 animate-fade-up"><Scale className="h-3.5 w-3.5" /> SRA Regulated · Est. 2008</div>
 
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-primary text-balance">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.02] text-primary text-balance">
             <span className="block">
               {title1.split("").map((c, i) => (
                 <span key={i} className="animate-letter" style={{ animationDelay: `${i * 0.04}s` }}>
@@ -35,7 +35,7 @@ export const Hero = ({ onBook }: { onBook: () => void }) => {
                 </span>
               ))}
             </span>
-            <span className="block italic font-medium text-gold mt-2 text-6xl md:text-7xl lg:text-8xl">
+            <span className="block italic font-medium text-gold mt-2 text-5xl md:text-6xl lg:text-7xl">
               {title2.split("").map((c, i) => (
                 <span key={i} className="animate-letter" style={{ animationDelay: `${0.5 + i * 0.05}s` }}>
                   {c}
@@ -73,7 +73,7 @@ export const Hero = ({ onBook }: { onBook: () => void }) => {
           <div className="absolute -inset-6 rounded-[2rem] bg-gold/15 rotate-3" aria-hidden />
           <div className="absolute -bottom-6 -right-6 w-40 h-40 border-[3px] border-gold rounded-full" aria-hidden />
           <div className="relative overflow-hidden rounded-[1.5rem] shadow-elegant">
-            <img src={heroImg} alt="CrestSolicitors expert UK solicitor" width={1024} height={1280} className="w-full h-[560px] object-cover" />
+            <img src={heroImg} alt="CrestSolicitors expert UK solicitor" width={1024} height={1280} className="w-full h-[480px] object-cover" />
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent" />
           </div>
           <div className="absolute -left-6 top-12 bg-cream shadow-card-soft rounded-2xl px-5 py-4 border border-gold/30">

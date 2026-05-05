@@ -64,7 +64,7 @@ export const About = () => (
         </ul>
 
         <div className="mt-9 flex items-center gap-8 flex-wrap">
-          <a href="#contact" className="btn-outline-gold">Read More About Us <ArrowRight className="h-4 w-4" /></a>
+          <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }} className="btn-outline-gold">Read More About Us <ArrowRight className="h-4 w-4" /></a>
           <div className="flex gap-8">
             {stats.map((s) => (
               <div key={s.label}>

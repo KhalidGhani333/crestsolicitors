@@ -50,7 +50,7 @@ export const Practice = () => {
               <div className="p-7 pt-10">
                 <h3 className="font-display text-2xl text-primary">{a.title}</h3>
                 <p className="mt-3 text-muted-foreground leading-relaxed">{a.body}</p>
-                <a href="#contact" className="mt-5 inline-flex items-center gap-2 text-sm text-gold font-medium group/link">
+                <a href={`/practice/${a.title.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} className="mt-5 inline-flex items-center gap-2 text-sm text-gold font-medium group/link">
                   Read More <ArrowRight className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
                 </a>
               </div>

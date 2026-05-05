@@ -1,10 +1,22 @@
 import { Facebook, Linkedin, Instagram, Twitter, Phone, Mail, MapPin } from "lucide-react";
 import { ScalesIcon } from "@/components/ScalesIcon";
 
-const cols = [
-  { title: "Quick Links", items: ["Home", "About Us", "Practice Areas", "Our Team", "Cases", "Contact"] },
-  { title: "Practice Areas", items: ["Employment Law", "Family Law", "Immigration", "Property Law", "Criminal Defence", "Corporate Law"] },
-  { title: "Legal Info", items: ["Privacy Policy", "Terms of Service", "Complaints Procedure", "SRA Registration", "Cookie Policy"] },
+const links = [
+  { label: "Home", href: "/#home" },
+  { label: "About Us", href: "/#about" },
+  { label: "Practice Areas", href: "/#practice" },
+  { label: "Our Team", href: "/#team" },
+  { label: "Cases", href: "/#cases" },
+  { label: "Contact", href: "/#contact" },
+];
+
+const practices = [
+  { label: "Employment Law", href: "/practice/employment-law" },
+  { label: "Family Law", href: "/practice/family-law" },
+  { label: "Immigration", href: "/practice/immigration-law" },
+  { label: "Property Law", href: "/practice/housing-property-law" },
+  { label: "Criminal Defence", href: "/practice/criminal-defence" },
+  { label: "Corporate Law", href: "/practice/corporate-commercial" },
 ];
 
 export const Footer = () => (
@@ -33,16 +45,23 @@ export const Footer = () => (
         </div>
       </div>
 
-      {cols.map((c) => (
-        <div key={c.title}>
-          <h4 className="font-display text-lg text-cream mb-4">{c.title}</h4>
-          <ul className="space-y-2.5 text-sm">
-            {c.items.map((i) => (
-              <li key={i}><a href="#" className="hover:text-gold transition-colors">{i}</a></li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      <div>
+        <h4 className="font-display text-lg text-cream mb-4">Quick Links</h4>
+        <ul className="space-y-2.5 text-sm">
+          {links.map((l) => (
+            <li key={l.label}><a href={l.href} className="hover:text-gold transition-colors">{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h4 className="font-display text-lg text-cream mb-4">Practice Areas</h4>
+        <ul className="space-y-2.5 text-sm">
+          {practices.map((p) => (
+            <li key={p.label}><a href={p.href} className="hover:text-gold transition-colors">{p.label}</a></li>
+          ))}
+        </ul>
+      </div>
 
       <div className="lg:col-span-1">
         <h4 className="font-display text-lg text-cream mb-4">Contact Us</h4>
@@ -55,9 +74,10 @@ export const Footer = () => (
     </div>
 
     <div className="border-t border-cream/10">
-      <div className="container-x py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-cream/60">
-        <p>© 2026 CrestSolicitors Ltd. Authorised and regulated by the Solicitors Regulation Authority (SRA No. 123456).</p>
-        <div className="flex items-center gap-2 px-3 py-1.5 border border-gold/40 rounded text-gold uppercase tracking-widest">SRA Regulated</div>
+      <div className="container-x py-6 flex flex-col md:flex-row justify-center items-center gap-4 text-xs text-cream/60">
+        <a href="https://axistechgroup.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-1.5 border border-gold/40 rounded text-gold uppercase tracking-widest hover:bg-gold/10 transition-colors">
+          Powered By AxisTechGroup
+        </a>
       </div>
     </div>
   </footer>

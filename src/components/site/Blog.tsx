@@ -15,7 +15,7 @@ export const Blog = () => (
         <p className="mt-5 text-muted-foreground leading-relaxed">
           Stay informed with expert commentary from our solicitors on the latest changes in UK law and what they mean for you.
         </p>
-        <a href="#blog" className="mt-7 btn-outline-gold inline-flex">Visit All Articles <ArrowRight className="h-4 w-4" /></a>
+        <a href="/blog" className="mt-7 btn-outline-gold inline-flex">Visit All Articles <ArrowRight className="h-4 w-4" /></a>
       </div>
 
       <div className="lg:col-span-3 grid sm:grid-cols-2 gap-6">
@@ -29,7 +29,7 @@ export const Blog = () => (
             <div className="p-6">
               <span className="text-xs uppercase tracking-wider text-gold">{p.category}</span>
               <h3 className="mt-2 font-display text-xl text-primary leading-snug">{p.title}</h3>
-              <a href="#blog" className="mt-4 inline-flex items-center gap-2 text-sm text-primary group/link">
+              <a href={`/blog/${p.title.toLowerCase().replace(/ /g, '-')}`} className="mt-4 inline-flex items-center gap-2 text-sm text-primary group/link">
                 Read More <ArrowRight className="h-4 w-4 text-gold transition-transform group-hover/link:translate-x-1" />
               </a>
             </div>

@@ -3,13 +3,13 @@ import { Menu, X } from "lucide-react";
 import { ScalesIcon } from "@/components/ScalesIcon";
 
 const links = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "practice", label: "Practice Areas" },
-  { id: "team", label: "Our Team" },
-  { id: "cases", label: "Cases" },
-  { id: "blog", label: "Blog" },
-  { id: "contact", label: "Contact" },
+  { id: "home", label: "Home", href: "/#home" },
+  { id: "about", label: "About", href: "/#about" },
+  { id: "practice", label: "Practice Areas", href: "/#practice" },
+  { id: "team", label: "Our Team", href: "/#team" },
+  { id: "cases", label: "Cases", href: "/#cases" },
+  { id: "blog", label: "Blog", href: "/#blog" },
+  { id: "contact", label: "Contact", href: "/#contact" },
 ];
 
 export const Navbar = ({ onBook }: { onBook: () => void }) => {
@@ -42,7 +42,7 @@ export const Navbar = ({ onBook }: { onBook: () => void }) => {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "glass-nav py-2" : "py-4 bg-transparent"}`}>
       <nav className="container-x flex items-center justify-between">
-        <a href="#home" onClick={(e) => { e.preventDefault(); go("home"); }} className="flex items-center gap-2.5 group">
+        <a href="/#home" onClick={(e) => { e.preventDefault(); go("home"); }} className="flex items-center gap-2.5 group">
           <span className="text-gold transition-transform duration-500 group-hover:rotate-[-6deg]"><ScalesIcon className="h-8 w-8" /></span>
           <span className="font-display text-2xl font-semibold tracking-tight text-primary">
             Crest<span className="text-gold">Solicitors</span>
@@ -53,7 +53,7 @@ export const Navbar = ({ onBook }: { onBook: () => void }) => {
           {links.map((l) => (
             <li key={l.id}>
               <a
-                href={`#${l.id}`}
+                href={l.href}
                 onClick={(e) => { e.preventDefault(); go(l.id); }}
                 className={`relative text-sm tracking-wide transition-colors ${active === l.id ? "text-gold" : "text-primary/80 hover:text-primary"}`}
               >

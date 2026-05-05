@@ -29,20 +29,21 @@ export const Cases = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           {cases.map((c, i) => (
-            <article
-              key={c.title}
-              onMouseEnter={() => setActive(i)}
-              className={`reveal relative rounded-2xl overflow-hidden h-[440px] group cursor-pointer transition-all duration-700 ${active === i ? "md:scale-[1.02] shadow-elegant" : ""}`}
-              style={{ transitionDelay: `${i * 0.08}s` }}
-            >
-              <img src={c.img} alt={c.title} loading="lazy" width={800} height={1024} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/60 to-transparent" />
-              <div className="relative h-full flex flex-col justify-end p-7 text-white">
-                <span className="self-start gold-pill !bg-gold/90 !text-primary !border-gold mb-4">{c.tag}</span>
-                <h3 className="font-display text-2xl">{c.title}</h3>
-                <p className="mt-2 text-sm text-white/80 leading-relaxed">{c.body}</p>
-              </div>
-            </article>
+            <a key={c.title} href={`/case/${c.title.toLowerCase().replace(/ /g, '-')}`} className="block">
+              <article
+                onMouseEnter={() => setActive(i)}
+                className={`relative rounded-2xl overflow-hidden h-[350px] md:h-[440px] group cursor-pointer transition-all duration-700 ${active === i ? "md:scale-[1.02] shadow-elegant" : ""}`}
+                style={{ transitionDelay: `${i * 0.08}s` }}
+              >
+                <img src={c.img} alt={c.title} loading="lazy" width={800} height={1024} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/60 to-transparent" />
+                <div className="relative h-full flex flex-col justify-end p-7 text-white">
+                  <span className="self-start gold-pill !bg-gold/90 !text-primary !border-gold mb-4">{c.tag}</span>
+                  <h3 className="font-display text-2xl">{c.title}</h3>
+                  <p className="mt-2 text-sm text-white/80 leading-relaxed">{c.body}</p>
+                </div>
+              </article>
+            </a>
           ))}
         </div>
       </div>
