@@ -161,6 +161,9 @@
     @apply inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full;
     background: hsl(var(--gold) / 0.15); color: hsl(var(--gold-deep));
   }
+  .input {
+    @apply w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-primary outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20;
+  }
 }
 
 @layer utilities {
